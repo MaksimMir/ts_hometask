@@ -1,0 +1,26 @@
+{
+  "name": "ts_hometask",
+  "version": "1.0.0",
+  "description": "ts_hometask",
+  "main": "index.js",
+  "scripts": {
+    "build": "rd -r public\\scripts 2>null & tsc",
+    "build:dev": "rd -r public\\scripts 2>null & tsc -p tsconfig-dev.json",
+    "start": "http-server -p 3000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MaksimMir/ts_hometask.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MaksimMir/ts_hometask/issues"
+  },
+  "homepage": "https://github.com/MaksimMir/ts_hometask#readme",
+  "optionalDependencies": {
+    "http-server": "^14.0.0",
+    "typescript": "^4.5.4"
+  }
+}
