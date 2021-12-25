@@ -6,6 +6,8 @@ const setDate = (day: number): string => {
   return date[0];
 }
 
+
+
 const ENTRY_DATE = setDate(1);
 const DEPARTTURE_DATE = setDate(3);
 const MIN_DATE = new Date();
