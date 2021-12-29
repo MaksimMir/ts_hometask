@@ -1,6 +1,21 @@
-import { renderBlock } from './lib.js'
+import { renderBlock } from './lib.js';
 
-export function renderUserBlock (userName: string, avatarLink: string, favoriteItemsAmount: number) {
+export interface UserDate {
+  userName: string;
+  avatarUrl: string;
+}
+
+export type Amount = number;
+
+export const getUserDate = ():unknown => {
+  return JSON.parse(localStorage.getItem('user'));
+}
+
+export const getFavotiteAmount = (): unknown => {
+  return localStorage.getItem('favoriteAmount');
+}
+
+export function renderUserBlock ({userName, avatarUrl}: UserDate, favoriteItemsAmount?: Amount) {
   const favoritesCaption = favoriteItemsAmount ? favoriteItemsAmount : 'ничего нет'
   const hasFavoriteItems = favoriteItemsAmount ? true : false
 
@@ -8,7 +23,7 @@ export function renderUserBlock (userName: string, avatarLink: string, favoriteI
     'user-block',
     `
     <div class="header-container">
-      <img class="avatar" src="${avatarLink}" alt="${userName}" />
+      <img class="avatar" src="${avatarUrl}" alt="${userName}" />
       <div class="info">
           <p class="name">${userName}</p>
           <p class="fav">
