@@ -13,6 +13,26 @@ const DEPARTTURE_DATE = setDate(3);
 const MIN_DATE = new Date();
 const MAX_DATE = setDate(60);
 
+interface SearchFormData {
+  city: string;
+  entryDate: string;
+  departureDate: string;
+  price: string;
+}
+
+export const handlerForm = () => {
+  return {
+    city: document.getElementById('city').getAttribute('value'),
+    entryDate: document.getElementById('check-in-date').getAttribute('value'),
+    departureDate: document.getElementById('check-out-date').getAttribute('value'),
+    price: document.getElementById('max-price').getAttribute('value'),
+  }
+}
+
+export const search = (obj: SearchFormData): void => {
+  console.log(obj);
+}
+
 export function renderSearchFormBlock (entryDate: string = ENTRY_DATE, departureDate: string = DEPARTTURE_DATE): void {
 
   renderBlock(
