@@ -20,12 +20,16 @@ interface SearchFormData {
   price: string;
 }
 
-export const handlerForm = () => {
+export const handlerForm = (): SearchFormData => {
+  const { value: city } = document.getElementById('city') as HTMLInputElement;
+  const { value: entryDate } = document.getElementById('check-in-date') as HTMLInputElement;
+  const { value: departureDate } = document.getElementById('check-out-date') as HTMLInputElement; 
+  const { value: price } = document.getElementById('max-price') as HTMLInputElement;
   return {
-    city: document.getElementById('city').getAttribute('value'),
-    entryDate: document.getElementById('check-in-date').getAttribute('value'),
-    departureDate: document.getElementById('check-out-date').getAttribute('value'),
-    price: document.getElementById('max-price').getAttribute('value'),
+    city: city,
+    entryDate: entryDate,
+    departureDate: departureDate,
+    price: price,
   }
 }
 

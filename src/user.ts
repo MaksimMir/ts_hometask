@@ -7,8 +7,12 @@ export interface UserDate {
 
 export type Amount = number;
 
-export const getUserDate = ():unknown => {
-  return JSON.parse(localStorage.getItem('user'));
+export const getUserDate = (): unknown => {
+  const user: string | null = localStorage.getItem('user');
+  if (user) {
+    return JSON.parse(user);
+  }
+  return 0;
 }
 
 export const getFavotiteAmount = (): unknown => {

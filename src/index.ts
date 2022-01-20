@@ -19,11 +19,15 @@ window.addEventListener('DOMContentLoaded', () => {
       {name: 'Понял', handler: () => {console.log('Уведомление закрыто')}}
   )
 
-  document.querySelector('form').addEventListener('submit', evt => {
-    evt.preventDefault();
-    const formData = handlerForm();
-    search(formData);
-  })
+  const form: HTMLFormElement | null = document.querySelector('form');
+  
+  if (form) {
+    form.addEventListener('submit', evt => {evt.preventDefault();
+      const formData = handlerForm();
+      search(formData);
+    })
+  }
+
 });
 
 const user = {
